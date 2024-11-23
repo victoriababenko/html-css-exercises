@@ -1,4 +1,4 @@
-# fullstack-dev-exercises
+# html-css-exercises
 
 ## Exercises for lecture #3 Графічні формати
 
