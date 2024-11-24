@@ -1,8 +1,12 @@
-# fullstack-dev-exercises
+# html-css-exercises
 
-## Exercises for lecture #4
+## Exercises for lecture #4 Box Model
 
-1. В середині exercises створіть піддирексторію lecture-04. В середині lecture-04 створіть файли index.html, css/main.css та README.md. Відредагуйте файл index.html:
+1. В середині exercises створіть піддирексторію lecture-04. В середині lecture-04 створіть файли index.html, css/main.css та README.md.
+
+Є два бокси - box1 та box2
+
+## файл index.html:
 
 ```html
 <!DOCTYPE html>
@@ -10,93 +14,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 4 challenges</title>
-
+    <title>Exercises for lecture #6</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-	<link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
-<body>
-	
-  	<section>
-        <h1>This is a heading 1</h1>
-		<h2>This is a heading 2</h2>
-		<h3>This is a heading 3</h3>
-    </section>
 
-	<main id='main'>
-		<h2 id="heading">This is a heading.</h2>
-		<p class="heading">This is a heading.</p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe placeat quisquam, eveniet aliquam ipsum amet cupiditate repudiandae obcaecati, impedit aperiam. 
-	
-	</main>
-	
-	<footer>
-		<h2 class="h2">This is a h2.</h2>
-		<p class="heading">This is a heading.</p>
-	</footer>
+<body class="body">
+    
+    <div class="box box1">I use the standard box model.</div>
+    <div class="box box2">I use the alternate box model.</div>
+    
+    <div class="box">
+      <p>
+        Veggies es bonus vobis,
+        <span>proinde vos postulo</span>
+        essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon
+        azuki bean garlic.
+      </p>
 
-	<p class="heading">This is a heading.</p>
-
+      <p>
+        Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+        courgette tatsoi pea sprouts fava bean collard greens dandelion okra
+        wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+      </p>
+    </div>
 </body>
 </html>
 ```
 
-2. Відредагуйте файл css/main.css
-	- визначити для усіх елементів h1, h2, h3 на веб-сторінці властивість колір тексту - сірий. 
-	- визначити для елемента з ідентифікатором main властивість color: #e60202;.
-	- визначити для елемента з класом h2 властивість color: червоний.
-	- встановити для елемента з класом heading колір тексту у зелений.
+Відредагуйте файл css/main.css:
 
-3. Відвідайте веб-сайт Google Fonts https://fonts.google.com/.
-знайдіть шрифт Roboto, додайте шрифт «Roboto» за допомогою посилання на сторінку index.html.
+```css
+.box {
+  border: 5px solid rebeccapurple;
+  background-color: lightgray;
+  padding: 40px;
+  margin: 40px;
+  width: 300px;
+  height: 150px;
+}
 
+.box span {
+    background-color: pink;
+    border: 5px solid black;
+    padding: 1em;
+}
 
-4. базовий розмір шрифта для кореневого елемента = 100%
-	- визначити розмір шрифта для body, що успадковує розмір шрифта кореневого елемента, збільшений на 40 відсотків
-
-	- визначити розмір шрифта для h1, що успадковує розмір шрифта кореневого елемента, збільшений на 140 відсотків
-
-5. Додайте до сторінки index.html наступну розмітку
-```html
-	<div>
-	<span>Outer <span>inner</span> outer</span>
-	</div>
 ```
-	- Припустімо, що розмір шрифту для body встановлено на 16 пікселів. 
-	- Слова «Outer» відображається з розміром 25,6 пікселів, а слово «inner» — 40,96 пікселів.
-	- Всередині файла css/main.css 
-		- визначте властивсть font-size для div, вказавши значення в одиницях виміру em.
-		- визначте властивсть font-size для span, вказавши значення в одиницях виміру em.
+
+    - Перший бокс box1 повмнен використовувати стандартну боксову модель, другий box2 – альтернативну боксову модель. 
 
 
-6. Додайте до сторінки index.html наступну розмітку
-```html
- 	<div>
-        <strong>Outer <strong>inner</strong> outer</strong>
-    </div>
-```
-	- Припустімо, що розмір шрифту для body встановлено на 16 пікселів. 
-	- Всередині файла css/main.css визначте властивсть font-size для strong так, щоб всі слова мали однаковий відносний розмір, еквівалентний 25,6 пікселів.
-
-7. Відредагувати файл css/main.css
-	- Встановити властивості елемента body:
-		- font-family: Roboto
-		- font-size: 1rem
-	- Встановити властивість font-weight: 700 для елементів h1, h2, h3
-	- Встановити властивість font-size: 1.45rem для елемента h1
-	- Встановити властивість font-size: 1.3rem для елемента h2
-	- Визначити клас .list-unstyled з властивістю list-style: none
-	- Визначити клас .footer-social
+    - Додайте до box2 нвступні властивості:
+        - Чорну пунктирну рамку розміром 5 пікселів.
+        - Верхнє поле 20 пікселів.
+        - Праве поле 1em.
+        - Нижнє поле 40 пікселів.
+        - Ліве поле 2 em.
+        - Підкладку з усіх боків 1ем.
 
 
-8. Відредагуйте файл css/main.css 
-	- Виконайте імпорт шрифтів font-awesomeза допомогою правила @import. 
+    - Вбудований елемент span має поле, відступ і рамку. Однак лінії вгорі та внизу перекривають його. Золбіть так, щоб інші рядки дотримувалися розміру полів, відступів і рамок, зберігаючи при цьому вбудований елемент span.
 
-9. Відредагуйте файл index.html
-	- В розділі footer створіть section з атрибутом class="footer-social"
-	- В середині цієї секції розмістіть елемент ul з атрибутом class="list-unstyled"
-	- В середині ul розмістіть елементи li, кожний з яких має містити посилання на одну з соціальних мереж - facebook, twitter, github, linkedin, youtube, instagram.
-	- Перегляньте документацію для font-awesome, знайдіть іконки відповідних соц-мереж та вставте їх як текст посилань
-
+    - Створіть div для всього вмісту сторінки та відцентруйте його посередині сторінки. Додайте рамку та відступ до цього div.
